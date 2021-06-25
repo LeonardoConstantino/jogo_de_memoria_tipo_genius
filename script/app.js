@@ -6,7 +6,7 @@ let listaSequenciaMaquina = []
 let listaSequenciaJogador = []
 let ini = 0
 
-// AUDIOS[4].play()
+AUDIOS[4].play()
 
 function add_random_numb_seq_maq() {
     listaSequenciaMaquina.push(Math.floor(Math.random() * 4))
