@@ -2,7 +2,7 @@ const AUDIOS = document.querySelectorAll('audio')
 const BTN_INICIAR = document.querySelector('#iniciar')
 const BTN_CORES = document.querySelectorAll('.cores')
 const BTN_RESETAR = document.querySelector('#Reset')
-let listaSequenciaMaquina = [1,1,1,2,2,3,3,3,0,0,0]
+let listaSequenciaMaquina = []
 let listaSequenciaJogador = []
 let ini = 0
 
@@ -22,7 +22,7 @@ function mostrar_seq_nos_btn() {
         piscar_cor_botao(BTN_CORES[listaSequenciaMaquina[ini]])
         tocar_audio_correto(listaSequenciaMaquina[ini])
         ++ini
-    }, 100)
+    }, 1000)
 }
 
 function tocar_audio_correto(audio) {
