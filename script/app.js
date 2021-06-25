@@ -1,9 +1,12 @@
+const AUDIOS = document.querySelectorAll('audio')
 const BTN_INICIAR = document.querySelector('#iniciar')
 const BTN_CORES = document.querySelectorAll('.cores')
 const BTN_RESETAR = document.querySelector('#Reset')
 let listaSequenciaMaquina = []
 let listaSequenciaJogador = []
 let ini = 0
+
+AUDIOS[4].play()
 
 function add_random_numb_seq_maq() {
     listaSequenciaMaquina.push(Math.floor(Math.random() * 4))
@@ -17,8 +20,9 @@ function mostrar_seq_nos_btn() {
             return
         }
         piscar_cor_botao(BTN_CORES[listaSequenciaMaquina[ini]])
+        AUDIOS[listaSequenciaMaquina[ini]].play()
         ++ini
-    }, 1000)
+    }, 1100)
 }
 
 function piscar_cor_botao(botao) {
@@ -67,6 +71,7 @@ function jogada_valida() {
 }
 
 function fim_do_jogo() {
+    AUDIOS[4].play()
     liberar_p_jogador('none')
     zerar()
     let fim = 0
@@ -82,6 +87,7 @@ function fim_do_jogo() {
 
 BTN_INICIAR.addEventListener('click', () => {
     if (BTN_INICIAR.value == 'Iniciar') {
+        AUDIOS[4].pause()
         liberar_p_jogador('auto')
         zerar()
         add_random_numb_seq_maq()
@@ -98,6 +104,7 @@ for (let i = 0; i < BTN_CORES.length; i++) {
         
         if (CLASSE_DO_BOTAO_CLICADO == 'verde') {
             listaSequenciaJogador.push(0)
+            AUDIOS[0].play()
             if (jogada_valida()) {
                 add_random_numb_seq_maq()
                 mostrar_seq_nos_btn()
@@ -108,6 +115,7 @@ for (let i = 0; i < BTN_CORES.length; i++) {
         }
         if (CLASSE_DO_BOTAO_CLICADO == 'amarelo') {
             listaSequenciaJogador.push(1)
+            AUDIOS[1].play()
             if (jogada_valida()) {
                 add_random_numb_seq_maq()
                 mostrar_seq_nos_btn()
@@ -118,6 +126,7 @@ for (let i = 0; i < BTN_CORES.length; i++) {
         }
         if (CLASSE_DO_BOTAO_CLICADO == 'vermelho') {
             listaSequenciaJogador.push(2)
+            AUDIOS[2].play()
             if (jogada_valida()) {
                 add_random_numb_seq_maq()
                 mostrar_seq_nos_btn()
@@ -128,6 +137,7 @@ for (let i = 0; i < BTN_CORES.length; i++) {
         }
         if (CLASSE_DO_BOTAO_CLICADO == 'azul') {
             listaSequenciaJogador.push(3)
+            AUDIOS[3].play()
             if (jogada_valida()) {
                 add_random_numb_seq_maq()
                 mostrar_seq_nos_btn()
