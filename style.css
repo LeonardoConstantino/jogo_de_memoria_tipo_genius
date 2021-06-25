@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vw;
+    font-weight:bold;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5vw;
+    height: 85vh;
+    background: linear-gradient(45deg, #58fa0160, #FFE44560,#B76CF560, #E05C3660, #41C6E060, #2228F060);
+    background-size: 500% 500%;
+    animation: cor 15s ease infinite;
+}
+
+@keyframes cor {
+    0% {
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.conteiner{
+    width: 70vw;
+    height: 60vw;
+    border: .7vw solid black;
+    border-radius: 6%;
+    background-color: #B76CF5;
+    box-shadow: 5px 7px 8px 3px #4e4e4e;
+}
+.conteiner1{
+    z-index: 1;
+    position: absolute;
+    border-radius: 50%;
+}
+.conteiner2{
+    width: 70vw;
+}
+.cores{
+    height: 25vw;
+    width: 25vw;
+    transition-duration: .15s;
+    pointer-events: none;
+}
+
+.iniciar{
+    height: 13vw;
+    width: 13vw;
+    border-radius: 50%;
+    border: .8vw solid black;
+}
+span#resetar {
+    z-index: 1;
+    position: absolute;
+}
+
+.verde{
+    background-color: #5AFA01;
+    border-radius: 100% 6% 6% 6%;
+    border: .8vw solid black;
+}
+.amarelo{
+    background-color: #FFE445;
+    border-radius: 6% 100% 6% 6%;
+    border: .8vw solid black;
+    border-left: 0;
+    border-bottom: 0;
+}
+.vermelho{
+    background-color: #E05C36;
+    border-radius: 6% 6% 6% 100%;
+    border: .8vw solid black;
+    border-top: 0px;
+    border-right: 0px;
+}
+.azul{
+    background-color: #41C6E0;
+    border-radius: 6% 6% 100% 6%;
+    border: .8vw solid black;
+}
+
+.cores:hover{
+    filter: contrast(70%);
+}
+#iniciar:hover{
+    filter: contrast(300%);
+}
+
+#verde:active{
+    filter: contrast(300%);
+    box-shadow: -4px -4px 30px 18px #58fa0160;
+}
+#amarelo:active{
+    filter: contrast(300%);
+    box-shadow: 4px -4px 30px 18px #FFE44560;
+}
+#vermelho:active{
+    filter: contrast(300%);
+    box-shadow: -4px 4px 30px 18px #E05C3660;
+}
+#azul:active{
+    filter: contrast(300%);
+    box-shadow: 4px 4px 30px 18px  #41C6E060;
+}
+#iniciar:active{
+    filter: contrast(70%);
+    box-shadow: inset 5px 7px 8px 3px #00000070;
+}
+
+/* Color Theme Swatches in Hex */
+.My-Color-Theme-1-hex { color: #FFE345; }
+.My-Color-Theme-2-hex { color: #E05B36; }
+.My-Color-Theme-3-hex { color: #B76CF5; }
+.My-Color-Theme-4-hex { color: #41C6E0; }
+.My-Color-Theme-5-hex { color: #57FA00; }
