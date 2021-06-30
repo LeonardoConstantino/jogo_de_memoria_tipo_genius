@@ -79,6 +79,7 @@ function mostrar_seq_nos_btn() {
     let intervalo = setInterval(()=>{
         if (ini == listaSequenciaMaquina.length) {
             clearInterval(intervalo)
+            liberar_p_jogador('auto')
             ini = 0
             return
         }
@@ -86,6 +87,7 @@ function mostrar_seq_nos_btn() {
         tocar_audio_correto(listaSequenciaMaquina[ini])
         ++ini
     }, 1000)
+    liberar_p_jogador('none')
 }
 
 function fim_do_jogo() {
