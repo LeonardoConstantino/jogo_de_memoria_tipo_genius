@@ -12,6 +12,7 @@ function add_random_numb_seq_maq() {
     listaSequenciaMaquina.push(Math.floor(Math.random() * 4))
     atualiza_placar_jogadas_restantes(true)
 }
+
 function atualiza_placar(placar) {
     jogadasRestantes = listaSequenciaMaquina.length
     PLACAR.innerHTML = (placar < 10)? '0' + placar : placar 
