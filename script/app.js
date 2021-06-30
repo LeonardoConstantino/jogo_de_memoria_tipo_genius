@@ -1,13 +1,19 @@
 const AUDIOS = document.querySelectorAll('audio')
 const BTN_INICIAR = document.querySelector('#iniciar')
 const BTN_CORES = document.querySelectorAll('.cores')
-const BTN_RESETAR = document.querySelector('#Reset')
+const PLACAR = document.querySelector('#placar')
+const PLACAR2 = document.querySelector('#placar2')
 let listaSequenciaMaquina = []
 let listaSequenciaJogador = []
+let jogadasRestantes
 let ini = 0
 
 function add_random_numb_seq_maq() {
     listaSequenciaMaquina.push(Math.floor(Math.random() * 4))
+}
+function atualiza_placar(placar) {
+    jogadasRestantes = listaSequenciaMaquina.length
+    PLACAR.innerHTML = (placar < 10)? '0' + placar : placar 
 }
 
 function tocar_audio_correto(audio) {
@@ -35,6 +41,13 @@ function zerar() {
     BTN_INICIAR.value = 'Iniciar'
 }
 
+// function atualiza_placar_jogadas_restantes() {
+//     (jogadasRestantes == 0)?jogadasRestantes:jogadasRestantes--
+//     PLACAR2.innerHTML = (jogadasRestantes < 10)
+//         ?'0' + jogadasRestantes 
+//         :jogadasRestantes 
+// }
+
 function jogada_valida() {
     for (let i = 0; i < listaSequenciaMaquina.length; i++) {
         if (listaSequenciaJogador[i] !== listaSequenciaMaquina[i]) {
@@ -42,12 +55,14 @@ function jogada_valida() {
         }
     }
     listaSequenciaJogador = []
+    atualiza_placar(listaSequenciaMaquina.length)
     return true
 }
 
 function resutado_da_jogada(bntClicado) {
     listaSequenciaJogador.push(bntClicado)
     tocar_audio_correto(bntClicado)
+    // atualiza_placar_jogadas_restantes()
     if (jogada_valida()) {
         add_random_numb_seq_maq()
         mostrar_seq_nos_btn()
@@ -103,6 +118,7 @@ function piscar_cor_botao(botao) {
 
 BTN_INICIAR.addEventListener('click', () => {
     if (BTN_INICIAR.value == 'Iniciar') {
+        atualiza_placar('0')
         AUDIOS[4].pause()
         liberar_p_jogador('auto')
         zerar()

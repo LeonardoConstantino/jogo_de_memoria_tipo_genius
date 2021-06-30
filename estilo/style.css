@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+@font-face {
+    font-family: 'digital';
+    src: url('../fontes/DS-DIGIT.TTF');
+}
+
 
 *{
     margin: 0;
@@ -53,7 +58,32 @@ body{
     z-index: 1;
     position: absolute;
     border-radius: 50%;
+    flex-direction: column-reverse;
 }
+#placar{
+    z-index: 2;
+    position: absolute;
+    width: 4.5vw;
+    color: gold;
+    background-color: black;
+    border-radius: 26%;
+    margin-right: .6vw;
+    margin-bottom: 45.5vw;
+    padding: 1vw;
+    font-family: 'digital';
+}
+/* #placar2{
+    z-index: 3;
+    position: absolute;
+    width: 4.5vw;
+    color: gold;
+    background-color: black;
+    border-radius: 26%;
+    margin-left: .6vw;
+    margin-top: 45.5vw;
+    padding: 1vw;
+    font-family: 'digital';
+} */
 .conteiner2{
     width: 70vw;
 }
@@ -69,10 +99,6 @@ body{
     width: 13vw;
     border-radius: 50%;
     border: .8vw solid black;
-}
-span#resetar {
-    z-index: 1;
-    position: absolute;
 }
 
 .verde{
