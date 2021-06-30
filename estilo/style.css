@@ -72,7 +72,7 @@ body{
     padding: 1vw;
     font-family: 'digital';
 }
-/* #placar2{
+#placar2{
     z-index: 3;
     position: absolute;
     width: 4.5vw;
@@ -80,10 +80,10 @@ body{
     background-color: black;
     border-radius: 26%;
     margin-left: .6vw;
-    margin-top: 45.5vw;
+    margin-top: 45.55vw;
     padding: 1vw;
     font-family: 'digital';
-} */
+}
 .conteiner2{
     width: 70vw;
 }
